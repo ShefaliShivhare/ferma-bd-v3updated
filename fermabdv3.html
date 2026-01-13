@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferma Agents for Business Development | China Intelligence & Global Deal Intelligence</title>
+    <meta name="description" content="Ferma Agents helps BD teams source deals faster with China intelligence, global asset monitoring, and stakeholder-ready deliverables.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            background-color: #F7F5FF;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: inherit;
+            margin: inherit;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
+        .footer-link:hover {
+            color: #fff !important;
+        }
+        .footer-link:focus {
+            outline: 2px solid #7B61FF;
+            outline-offset: 2px;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes flowRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(960px); }
+        }
+        @keyframes pulseDots {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        @keyframes pulseDiamond {
+            0%, 100% {
+                transform-origin: 430px 320px;
+                transform: scale(1);
+                filter: drop-shadow(0 0 0px rgba(123, 97, 255, 0));
+            }
+            50% {
+                transform-origin: 430px 320px;
+                transform: scale(1.03);
+                filter: drop-shadow(0 0 6px rgba(123, 97, 255, 0.3));
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .fade-in-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-in-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .fade-in-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .fade-in-up-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+        .data-flow-1 { animation: flowRight 28s linear infinite; animation-delay: -3s; }
+        .data-flow-2 { animation: flowRight 28s linear infinite; animation-delay: -9s; }
+        .data-flow-3 { animation: flowRight 28s linear infinite; animation-delay: -15s; }
+        .data-flow-4 { animation: flowRight 28s linear infinite; animation-delay: -21s; }
+        .window-dot-1 { animation: pulseDots 2s ease-in-out infinite; }
+        .window-dot-2 { animation: pulseDots 2s ease-in-out infinite; animation-delay: 0.3s; }
+        .window-dot-3 { animation: pulseDots 2s ease-in-out infinite; animation-delay: 0.6s; }
+        .diamond-pulse { animation: pulseDiamond 2s ease-in-out infinite; }
+        .dot-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            fill: #000000;
+        }
+
+        /* Hero Styles */
+        .credibility-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+        .credibility-bar a {
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .credibility-bar a:hover {
+            color: #7B61FF;
+        }
+        .headline-prefix {
+            font-size: 52px;
+            font-weight: 700;
+            color: #000;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            display: block;
+        }
+        .headline-main {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            display: block;
+        }
+        .headline-main span {
+            color: #7B61FF;
+            font-style: italic;
+        }
+        .subhead {
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.7);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+        .subhead strong {
+            color: #000;
+            font-weight: 600;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #7B61FF;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .cta-button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Benefits Visual Cards */
+        .benefits-visual {
+            background: linear-gradient(160deg, rgba(40, 40, 40, 0.85) 0%, rgba(0, 0, 0, 0.95) 100%);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-radius: 16px;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .alert-card {
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1.5px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.2s;
+        }
+        .alert-card:hover {
+            border-color: rgba(123, 97, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .entity-card {
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .entity-card:hover {
+            border-color: rgba(123, 97, 255, 0.3);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 14px;
+        }
+        .comparison-table th {
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 700;
+            color: #000;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        }
+        .comparison-table th:first-child {
+            width: 200px;
+        }
+        .comparison-table td {
+            padding: 14px 20px;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .comparison-table th:last-child,
+        .comparison-table td:last-child {
+            color: #7B61FF;
+            font-weight: 500;
+        }
+        .comparison-table td:last-child {
+            background-color: rgba(123, 97, 255, 0.03);
+        }
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                gap: 32px !important;
+                padding: 32px 24px !important;
+            }
+            .hero-svg {
+                width: 420px !important;
+                height: auto !important;
+            }
+            .benefits-row {
+                gap: 48px !important;
+                margin-bottom: 48px !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .proof-points {
+                flex-direction: column !important;
+                gap: 16px !important;
+                align-items: flex-start !important;
+            }
+            .hero-container {
+                flex-direction: column !important;
+                gap: 32px !important;
+                padding: 24px 20px 32px !important;
+                text-align: center;
+                align-items: center !important;
+            }
+            .hero-text {
+                flex: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .headline-prefix,
+            .headline-main {
+                font-size: 36px !important;
+            }
+            .subhead {
+                font-size: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-svg-container {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-svg {
+                width: 100% !important;
+                max-width: 400px !important;
+                height: auto !important;
+            }
+            .benefits-section h2 span:first-child {
+                font-size: 32px !important;
+            }
+            .benefits-section h2 span:last-child {
+                font-size: 18px !important;
+            }
+            .benefits-row {
+                flex-direction: column !important;
+                gap: 32px !important;
+            }
+            .benefits-row.reverse {
+                flex-direction: column !important;
+            }
+            .benefits-text {
+                text-align: center;
+            }
+            .benefits-visual {
+                height: 380px !important;
+                width: 100%;
+            }
+            .comparison-section h2 span {
+                font-size: 32px !important;
+            }
+            .comparison-table {
+                display: block;
+            }
+            .comparison-table thead {
+                display: none;
+            }
+            .comparison-table tbody {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            .comparison-table tbody tr {
+                display: flex;
+                flex-direction: column;
+                padding: 16px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            }
+            .comparison-table tbody tr:last-child {
+                border-bottom: none;
+            }
+            .comparison-table tbody tr th {
+                font-size: 15px;
+                padding: 0 0 8px 0;
+                border: none;
+            }
+            .comparison-table tbody tr td {
+                padding: 4px 0;
+                border: none;
+                font-size: 14px;
+            }
+            .comparison-table tbody tr td::before {
+                content: attr(data-label);
+                display: inline-block;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                margin-right: 8px;
+                color: rgba(0, 0, 0, 0.5);
+                padding: 2px 6px;
+                background: rgba(0, 0, 0, 0.04);
+                border-radius: 3px;
+            }
+            .comparison-table tbody tr td[data-label="Ferma Agents"]::before {
+                color: #7B61FF;
+                background: rgba(123, 97, 255, 0.1);
+            }
+            .cta-section h2 span {
+                font-size: 32px !important;
+            }
+            .footer-content {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 20px !important;
+                height: auto !important;
+                padding: 24px 20px !important;
+            }
+            .footer-logo, .footer-links {
+                flex: none !important;
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 12px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .headline-prefix,
+            .headline-main {
+                font-size: 28px !important;
+            }
+            .benefits-section h2 span:first-child {
+                font-size: 26px !important;
+            }
+            .benefits-section h2 span:last-child {
+                font-size: 16px !important;
+            }
+            .benefits-visual {
+                height: 320px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner" style="background-color: rgba(247, 245, 255, 0.9); position: fixed; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.02);">
+        <nav role="navigation" aria-label="Main navigation" class="max-w-7xl mx-auto px-8">
+            <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; max-width: 1200px; margin: 0 auto;">
+                <a href="https://www.ferma.ai" aria-label="Ferma Agents home" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M 5 1 C 8 0.5, 14 1.5, 20 1 C 24 0.5, 26 1, 27 2 C 27.5 4, 27 10, 27.5 16 C 28 22, 27 25, 26 27 C 24 27.5, 18 27, 12 27.5 C 6 28, 2 27, 1 26 C 0.5 24, 1 18, 0.5 12 C 0 6, 1 2, 2 1 C 3 0.5, 4 1, 5 1 Z" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g transform="translate(3, 4) scale(0.045)">
+                            <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                            <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                            <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                            <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                        </g>
+                    </svg>
+                    <span class="text-base font-semibold text-black" style="white-space: nowrap;">Ferma Agents</span>
+                </a>
+                <a href="https://agents.ferma.ai/" target="_blank" rel="noopener noreferrer" aria-label="Log in to Ferma Agents" class="px-4 py-1.5 text-sm font-medium text-white rounded tracking-wide hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2" style="background-color: #7B61FF; text-decoration: none;">
+                    Log In
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="min-h-screen" style="background-color: #F7F5FF; padding-top: 56px;">
+        <!-- Hero Section - Text + Product Dashboard -->
+        <main id="main-content" role="main" class="max-w-7xl mx-auto px-8" style="background-color: #F7F5FF;">
+            <!-- Hero Text - Centered -->
+            <div class="hero-text-section fade-in-up" style="text-align: left; padding-top: 48px; padding-bottom: 32px; max-width: 1200px; margin: 0 auto;">
+                <p class="credibility-bar fade-in-up fade-in-up-delay-1" style="justify-content: flex-start;">
+                    Built for BioPharma BD Teams
+                </p>
+
+                <h1 class="fade-in-up fade-in-up-delay-2" style="margin-bottom: 24px;">
+                    <span class="headline-prefix">Find Chinese Partners</span>
+                    <span class="headline-main">Before <span>Others Do</span></span>
+                </h1>
+
+                <p class="subhead fade-in-up fade-in-up-delay-3">
+                    With Ferma, BD teams leverage early signals from China — preclinical activity, local momentum, and emerging programs — structured into BD-ready intelligence.
+                </p>
+
+                <!-- Proof Points -->
+                <div class="proof-points fade-in-up fade-in-up-delay-4" style="display: flex; gap: 32px; margin-bottom: 32px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B61FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                        <span style="font-size: 14px; font-weight: 500; color: #000;">WeChat Monitoring</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B61FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span style="font-size: 14px; font-weight: 500; color: #000;">On-the-Ground China Presence</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B61FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                        <span style="font-size: 14px; font-weight: 500; color: #000;">BD-Ready Structuring</span>
+                    </div>
+                </div>
+
+                <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank" rel="noopener noreferrer" class="cta-button fade-in-up fade-in-up-delay-5">
+                    Book a Demo
+                </a>
+            </div>
+
+            <!-- Product Preview Section -->
+            <section id="product-preview" aria-label="Product preview" style="padding: 40px 0 60px; display: flex; justify-content: center;">
+                <div class="product-preview" style="width: 1200px; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.2); border: 1px solid rgba(255,255,255,0.1); background: linear-gradient(160deg, rgba(40, 40, 40, 0.85) 0%, rgba(0, 0, 0, 0.95) 100%); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);">
+                    <div id="ferma-app-root" style="width: 100%; height: 700px;"></div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section class="benefits-section" aria-labelledby="benefits-heading" style="padding: 80px 0; display: flex; flex-direction: column; align-items: center; background-color: #F7F5FF;">
+                <div class="max-w-7xl mx-auto px-8" style="width: 100%;">
+                    <!-- Section Title -->
+                    <div style="text-align: center; max-width: 900px; margin: 0 auto 60px auto;">
+                        <h2 id="benefits-heading" class="mb-6 leading-tight">
+                            <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 48px; display: block; margin-bottom: 8px; letter-spacing: -0.01em; color: #000;">
+                                From <span style="color: #7B61FF; font-style: italic;">Signal</span> to Conviction
+                            </span>
+                            <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 28px; display: block; letter-spacing: -0.01em; color: rgba(0,0,0,0.7);">
+                                Faster Than Your Competition
+                            </span>
+                        </h2>
+                    </div>
+
+                    <!-- Benefit 1: Partner Identification -->
+                    <div class="benefits-row" style="display: flex; align-items: center; gap: 80px; margin-bottom: 80px;">
+                        <div class="benefits-text" style="flex: 1;">
+                            <h3 class="text-2xl font-semibold text-black mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.01em;">
+                                Partner Identification
+                            </h3>
+                            <p class="text-lg leading-relaxed" style="color: rgba(0,0,0,0.7);">
+                                Ferma brings together fragmented scientific, corporate, and local signals to help BD teams identify potential partners earlier—before they are widely visible in traditional databases.
+                            </p>
+                        </div>
+                        <div class="benefits-visual" style="flex: 1; height: 420px;">
+                            <div style="padding: 12px; display: flex; flex-direction: column; gap: 8px; height: 100%; overflow: hidden;">
+                                <!-- Signal 1: WeChat Channel -->
+                                <div class="alert-card" style="border-left: 3px solid #22c55e;">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 20px; height: 20px; background: #22c55e; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #000; letter-spacing: 0.08em;">WeChat Channel</span>
+                                        <span style="font-size: 10px; color: #22c55e; font-weight: 600; padding: 2px 5px; background: rgba(34,197,94,0.1); border-radius: 4px;">New</span>
+                                        <span style="font-size: 11px; color: #999; margin-left: auto;">2h ago</span>
+                                    </div>
+                                    <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">Hengrui BD team "actively seeking global partners" for ADC portfolio</div>
+                                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">ADC</span>
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">Ex-China</span>
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">Preclinical</span>
+                                    </div>
+                                </div>
+
+                                <!-- Signal 2: NMPA Filing -->
+                                <div class="alert-card" style="border-left: 3px solid #7B61FF;">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 20px; height: 20px; background: #7B61FF; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #000; letter-spacing: 0.08em;">NMPA Filing</span>
+                                        <span style="font-size: 10px; color: #7B61FF; font-weight: 600; padding: 2px 5px; background: rgba(123,97,255,0.1); border-radius: 4px;">IND</span>
+                                        <span style="font-size: 11px; color: #999; margin-left: auto;">1d ago</span>
+                                    </div>
+                                    <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">Duality Bio files IND for novel TROP2 ADC with differentiated payload</div>
+                                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">TROP2</span>
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">Novel Linker</span>
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">Global Rights</span>
+                                    </div>
+                                </div>
+
+                                <!-- Signal 3: Local Conference -->
+                                <div class="alert-card" style="border-left: 3px solid #f59e0b;">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 20px; height: 20px; background: #f59e0b; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #000; letter-spacing: 0.08em;">CSCO 2025</span>
+                                        <span style="font-size: 10px; color: #f59e0b; font-weight: 600; padding: 2px 5px; background: rgba(245,158,11,0.1); border-radius: 4px;">Poster</span>
+                                        <span style="font-size: 11px; color: #999; margin-left: auto;">3d ago</span>
+                                    </div>
+                                    <div style="font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px;">RemeGen presents Claudin 18.2 ADC Phase 1 data — 52% ORR</div>
+                                    <div style="display: flex; gap: 4px;">
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">Claudin 18.2</span>
+                                        <span style="font-size: 10px; color: #666; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">Gastric</span>
+                                    </div>
+                                </div>
+
+                                <!-- Signal 4: Corporate Signal -->
+                                <div class="alert-card" style="opacity: 0.85;">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 20px; height: 20px; background: #fff; border: 1px solid #ddd; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #666; letter-spacing: 0.08em;">Leadership</span>
+                                        <span style="font-size: 10px; color: #3b82f6; font-weight: 600; padding: 2px 5px; background: rgba(59,130,246,0.1); border-radius: 4px;">CBO Hire</span>
+                                        <span style="font-size: 11px; color: #aaa; margin-left: auto;">1w ago</span>
+                                    </div>
+                                    <div style="font-size: 13px; font-weight: 500; color: #444; margin-bottom: 4px;">Kelun-Biotech hires ex-Pfizer BD lead — signals partnership push</div>
+                                    <div style="display: flex; gap: 4px;">
+                                        <span style="font-size: 10px; color: #888; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">SKB-264</span>
+                                        <span style="font-size: 10px; color: #888; padding: 2px 6px; background: #f5f5f5; border-radius: 4px;">TROP2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 2: Deal Evaluation (Reversed) -->
+                    <div class="benefits-row reverse" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 80px; margin-bottom: 80px;">
+                        <div class="benefits-text" style="flex: 1;">
+                            <h3 class="text-2xl font-semibold text-black mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.01em;">
+                                Deal Evaluation
+                            </h3>
+                            <p class="text-lg leading-relaxed" style="color: rgba(0,0,0,0.7);">
+                                Structured views of pipelines, activity signals, and comparable benchmarks enable BD teams to evaluate and prioritize opportunities consistently, without relying on ad-hoc research.
+                            </p>
+                        </div>
+                        <div class="benefits-visual" style="flex: 1; height: 420px;">
+                            <div style="padding: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: 100%; overflow: hidden;">
+                                <!-- Company Card -->
+                                <div class="entity-card">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 18px; height: 18px; background: #7B61FF; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 0.08em;">Company</span>
+                                        <span style="font-size: 10px; color: #22c55e; font-weight: 600; padding: 2px 5px; background: rgba(34,197,94,0.1); border-radius: 4px; margin-left: auto;">Priority</span>
+                                    </div>
+                                    <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Hengrui Medicine</div>
+                                    <div style="font-size: 11px; color: #666; margin-bottom: 4px;">600276.SS • Shanghai</div>
+                                    <div style="display: flex; gap: 8px; margin-bottom: 4px;">
+                                        <span style="font-size: 11px;"><strong style="color: #000;">$28B</strong> <span style="color: #666;">Mkt Cap</span></span>
+                                        <span style="font-size: 11px;"><strong style="color: #22c55e;">Strong</strong> <span style="color: #666;">Cash</span></span>
+                                    </div>
+                                    <div style="font-size: 11px; color: #666; font-style: italic; line-height: 1.4; margin-top: auto;">"Seeking global partners for ADC assets" — BD Lead</div>
+                                </div>
+
+                                <!-- Pipeline Card -->
+                                <div class="entity-card">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 18px; height: 18px; background: #fff; border: 1px solid #ddd; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M9 9h6v6H9z"></path></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 0.08em;">Pipeline</span>
+                                        <span style="font-size: 10px; color: #7B61FF; font-weight: 600; padding: 2px 5px; background: rgba(123,97,255,0.1); border-radius: 4px; margin-left: auto;">3 ADCs</span>
+                                    </div>
+                                    <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">HRS-ADC Portfolio</div>
+                                    <div style="font-size: 11px; color: #666; margin-bottom: 4px;">Claudin 18.2, HER2, Nectin-4</div>
+                                    <div style="display: flex; gap: 8px; margin-bottom: 4px;">
+                                        <span style="font-size: 11px;"><strong style="color: #22c55e;">52%</strong> <span style="color: #666;">ORR</span></span>
+                                        <span style="font-size: 11px;"><strong style="color: #000;">Ph1/2</strong> <span style="color: #666;">Stage</span></span>
+                                    </div>
+                                    <div style="font-size: 11px; color: #666; font-style: italic; line-height: 1.4; margin-top: auto;">Novel linker-payload technology</div>
+                                </div>
+
+                                <!-- Comparables Card -->
+                                <div class="entity-card" style="border-color: rgba(59,130,246,0.2);">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 18px; height: 18px; background: #3b82f6; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 0.08em;">Comps</span>
+                                        <span style="font-size: 10px; color: #3b82f6; font-weight: 600; padding: 2px 5px; background: rgba(59,130,246,0.1); border-radius: 4px; margin-left: auto;">Benchmark</span>
+                                    </div>
+                                    <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Deal Comparables</div>
+                                    <div style="font-size: 11px; color: #666; line-height: 1.5;">
+                                        <span style="color: #000;">Merck/Kelun:</span> $1.4B upfront<br>
+                                        <span style="color: #000;">AZ/Daiichi:</span> $1B + milestones<br>
+                                        <span style="color: #000;">Pfizer/Seagen:</span> $43B acq
+                                    </div>
+                                    <div style="margin-top: auto; padding-top: 6px;">
+                                        <span style="font-size: 10px; padding: 2px 5px; background: #f5f5f5; border-radius: 3px; color: #666;">Est. $200-500M range</span>
+                                    </div>
+                                </div>
+
+                                <!-- Rights Card -->
+                                <div class="entity-card">
+                                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                                        <div style="width: 18px; height: 18px; background: #22c55e; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <span style="font-size: 11px; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 0.08em;">Rights</span>
+                                        <span style="font-size: 10px; color: #22c55e; font-weight: 600; padding: 2px 5px; background: rgba(34,197,94,0.1); border-radius: 4px; margin-left: auto;">Ex-China</span>
+                                    </div>
+                                    <div style="font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">Global rights available</div>
+                                    <div style="font-size: 11px; color: #666; line-height: 1.4;">
+                                        <span style="color: #000;">Territory:</span> Ex-Greater China<br>
+                                        <span style="color: #000;">Structure:</span> License preferred<br>
+                                        <span style="color: #000;">Timeline:</span> Active discussions
+                                    </div>
+                                    <div style="margin-top: auto; padding-top: 6px; display: flex; gap: 4px; flex-wrap: wrap;">
+                                        <span style="font-size: 10px; padding: 2px 5px; background: #f5f5f5; border-radius: 3px; color: #666;">WeChat</span>
+                                        <span style="font-size: 10px; padding: 2px 5px; background: #f5f5f5; border-radius: 3px; color: #666;">NMPA</span>
+                                        <span style="font-size: 10px; padding: 2px 5px; background: #f5f5f5; border-radius: 3px; color: #666;">Local</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 8px 12px; background: rgba(255,255,255,0.1); border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 6px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                                <span style="font-size: 11px; color: #ccc;"><span style="color: #fff; font-weight: 600;">Structured evaluation</span> — consistent framework for all targets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 3: Continuous Intelligence -->
+                    <div class="benefits-row" style="display: flex; align-items: center; gap: 80px;">
+                        <div class="benefits-text" style="flex: 1;">
+                            <h3 class="text-2xl font-semibold text-black mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.01em;">
+                                Continuous Intelligence
+                            </h3>
+                            <p class="text-lg leading-relaxed" style="color: rgba(0,0,0,0.7);">
+                                Ferma runs continuously, tracking new activity and catalysts as they emerge, so BD teams stay current while spending less time on manual monitoring.
+                            </p>
+                        </div>
+                        <div class="benefits-visual" style="flex: 1; height: 420px;">
+                            <div style="padding: 12px; display: flex; flex-direction: column; height: 100%; overflow: hidden;">
+                                <!-- Header with Live Indicator -->
+                                <div style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+                                    <div>
+                                        <h4 style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px;">China ADC Watchlist</h4>
+                                        <div style="font-size: 11px; color: #ccc;">5 targets monitored • 12 catalysts tracked</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(34,197,94,0.15); border-radius: 20px;">
+                                        <div style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                        <span style="font-size: 10px; color: #22c55e; font-weight: 600;">LIVE</span>
+                                    </div>
+                                </div>
+
+                                <!-- Activity Timeline -->
+                                <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; overflow: hidden;">
+                                    <!-- Today's Updates -->
+                                    <div style="background: #fff; border-radius: 8px; padding: 10px;">
+                                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                                            <span style="font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase;">Today</span>
+                                            <span style="font-size: 10px; color: #fff; background: #ef4444; padding: 1px 6px; border-radius: 10px;">2 new</span>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                                            <div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; background: rgba(123,97,255,0.08); border-radius: 6px;">
+                                                <div style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%;"></div>
+                                                <span style="font-size: 11px; color: #1a1a1a; flex: 1;"><strong>Hengrui</strong> WeChat post mentions "global BD discussions"</span>
+                                                <span style="font-size: 10px; color: #999;">1h</span>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; background: rgba(123,97,255,0.08); border-radius: 6px;">
+                                                <div style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%;"></div>
+                                                <span style="font-size: 11px; color: #1a1a1a; flex: 1;"><strong>DualityBio</strong> DB-1305 Phase 1 interim update filed</span>
+                                                <span style="font-size: 10px; color: #999;">3h</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Upcoming Catalysts -->
+                                    <div style="background: #fff; border-radius: 8px; padding: 10px; flex: 1;">
+                                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                                            <span style="font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase;">Upcoming Catalysts</span>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <span style="font-size: 10px; color: #666; width: 45px;">Jan 18</span>
+                                                <span style="font-size: 11px; color: #1a1a1a;"><strong>Kelun</strong> — ASCO-GI data presentation</span>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <span style="font-size: 10px; color: #666; width: 45px;">Jan 22</span>
+                                                <span style="font-size: 11px; color: #1a1a1a;"><strong>RemeGen</strong> — JPM update expected</span>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <span style="font-size: 10px; color: #666; width: 45px;">Feb 1</span>
+                                                <span style="font-size: 11px; color: #1a1a1a;"><strong>Hengrui</strong> — Q4 earnings call</span>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <span style="font-size: 10px; color: #999; width: 45px;">Feb 15</span>
+                                                <span style="font-size: 11px; color: #666;"><strong>DualityBio</strong> — Phase 1 readout window</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Footer -->
+                                <div style="margin-top: 10px; padding: 8px 10px; background: rgba(255,255,255,0.1); border-radius: 6px; display: flex; align-items: center; justify-content: space-between;">
+                                    <span style="font-size: 10px; color: #ccc;"><span style="color: #fff;">Ferma auto-tracks</span> — no manual monitoring needed</span>
+                                    <span style="font-size: 10px; color: #ccc;">Updated 2 min ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Section -->
+            <section class="comparison-section" aria-labelledby="comparison-heading" style="padding: 80px 0; background-color: #F7F5FF;">
+                <div class="max-w-7xl mx-auto px-8">
+                    <h2 id="comparison-heading" class="mb-12 leading-tight text-center">
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 48px; display: block; letter-spacing: -0.01em; color: #000;">
+                            A <span style="color: #7B61FF; font-style: italic;">New Class</span> of Deal Intelligence
+                        </span>
+                    </h2>
+
+                    <div style="max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.9); backdrop-filter: blur(24px); border-radius: 16px; padding: 24px; box-shadow: 0 4px 20px -4px rgba(0,0,0,0.08); border: 1px solid rgba(255,255,255,0.5);">
+                        <table class="comparison-table" aria-label="Comparison of Ferma Agents versus incumbents">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Feature</th>
+                                    <th scope="col">Cortellis / Evaluate Pharma</th>
+                                    <th scope="col">Ferma Agents</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Deal Signal Detection</th>
+                                    <td data-label="Cortellis">Manual news monitoring</td>
+                                    <td data-label="Ferma Agents">24/7 SEC, banker mandates, language shift alerts</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">China Coverage</th>
+                                    <td data-label="Cortellis">Limited western-centric sources</td>
+                                    <td data-label="Ferma Agents">Native language NMPA, WeChat, local access</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Financial Analysis</th>
+                                    <td data-label="Cortellis">Separate tools, manual assembly</td>
+                                    <td data-label="Ferma Agents">Cash runway, seller motivation integrated</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Rights Verification</th>
+                                    <td data-label="Cortellis">Manual 10-K review</td>
+                                    <td data-label="Ferma Agents">Auto-verified from SEC filings</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">BD Outputs</th>
+                                    <td data-label="Cortellis">Raw data exports you format</td>
+                                    <td data-label="Ferma Agents">Target profiles in your templates</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section" aria-labelledby="cta-heading" style="padding: 80px 0; display: flex; flex-direction: column; align-items: center; text-align: center; background-color: #F7F5FF;">
+                <h2 id="cta-heading" class="leading-tight" style="text-align: center; margin-bottom: 48px;">
+                    <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 48px; display: block; letter-spacing: -0.01em; color: #000;">
+                        Try Ferma Agents Now
+                    </span>
+                </h2>
+                <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank" rel="noopener noreferrer" class="cta-button">
+                    Book a Demo
+                </a>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer role="contentinfo" style="background-color: #0a0a0a; padding: 0;">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="footer-content" style="display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1200px; margin: 0 auto;">
+                    <!-- Left side: ZoomRx icon + Ferma Agents -->
+                    <div class="footer-logo" style="display: flex; align-items: center; gap: 24px;">
+                        <!-- ZoomRx circular icon -->
+                        <a href="https://www.zoomrx.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center;">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="18" cy="18" r="17" stroke="#3B82F6" stroke-width="2" fill="none"/>
+                                <path d="M12 18C12 14.6863 14.6863 12 18 12" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M18 24C21.3137 24 24 21.3137 24 18" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="18" cy="12" r="2" fill="#3B82F6"/>
+                                <circle cx="24" cy="18" r="2" fill="#3B82F6"/>
+                            </svg>
+                        </a>
+                        <!-- Ferma Agents -->
+                        <a href="https://www.ferma.ai" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M 5 1 C 8 0.5, 14 1.5, 20 1 C 24 0.5, 26 1, 27 2 C 27.5 4, 27 10, 27.5 16 C 28 22, 27 25, 26 27 C 24 27.5, 18 27, 12 27.5 C 6 28, 2 27, 1 26 C 0.5 24, 1 18, 0.5 12 C 0 6, 1 2, 2 1 C 3 0.5, 4 1, 5 1 Z" fill="#7B61FF"/>
+                                <g transform="translate(3, 4) scale(0.045)">
+                                    <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                                    <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                                    <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                                    <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                                </g>
+                            </svg>
+                            <span style="font-size: 14px; font-weight: 600; color: #fff;">Ferma Agents</span>
+                        </a>
+                    </div>
+                    <!-- Right side: Links + SOC2 badge -->
+                    <div class="footer-links" style="display: flex; align-items: center; gap: 16px;">
+                        <a href="mailto:info@ferma.ai" class="footer-link" style="font-size: 14px; color: #9CA3AF; text-decoration: none; transition: color 0.2s;">info@ferma.ai</a>
+                        <span style="color: #4B5563; font-size: 14px;">•</span>
+                        <a href="https://agents.ferma.ai/terms-and-conditions" target="_blank" rel="noopener noreferrer" class="footer-link" style="font-size: 14px; color: #9CA3AF; text-decoration: none; transition: color 0.2s;">Terms</a>
+                        <span style="color: #4B5563; font-size: 14px;">•</span>
+                        <a href="https://agents.ferma.ai/privacy-policy" target="_blank" rel="noopener noreferrer" class="footer-link" style="font-size: 14px; color: #9CA3AF; text-decoration: none; transition: color 0.2s;">Privacy</a>
+                        <!-- SOC2 Badge - Blue shield style -->
+                        <a href="https://trust.ferma.ai/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; margin-left: 8px; text-decoration: none;">
+                            <svg width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 2L4 10V26C4 40 24 52 24 52C24 52 44 40 44 26V10L24 2Z" fill="#1E40AF" stroke="#3B82F6" stroke-width="2"/>
+                                <text x="24" y="20" text-anchor="middle" fill="#9CA3AF" font-size="6" font-weight="500">SECURED BY</text>
+                                <text x="24" y="32" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">SOC 2</text>
+                                <circle cx="24" cy="44" r="6" fill="#1E3A8A" stroke="#3B82F6" stroke-width="1"/>
+                                <path d="M21 44L23 46L27 42" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- React Libraries for Product Preview -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Icon components
+        const Check = ({ size = 16, className = "", strokeWidth = 2 }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <polyline points="20 6 9 17 4 12" />
+            </svg>
+        );
+
+        const Pencil = ({ size = 16, className = "" }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+            </svg>
+        );
+
+        const Play = ({ size = 16, className = "", fill = "none" }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+        );
+
+        const Download = ({ size = 16, className = "" }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+        );
+
+        const Send = ({ size = 16, className = "" }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+        );
+
+        const CollapsePanelLeftIcon = ({ size = 16, className = "" }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <line x1="9" y1="3" x2="9" y2="21" />
+            </svg>
+        );
+
+        const CollapsePanelRightIcon = ({ size = 16, className = "" }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <line x1="15" y1="3" x2="15" y2="21" />
+            </svg>
+        );
+
+        const Tooltip = ({ children, label }) => (
+            <div className="relative group">
+                {children}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-black text-white text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
+                    {label}
+                </div>
+            </div>
+        );
+
+        const PriorityBadge = ({ level }) => {
+            const config = {
+                high: { bg: 'bg-emerald-500/80', text: 'HIGH PRIORITY' },
+                medium: { bg: 'bg-amber-500/80', text: 'MEDIUM' },
+                low: { bg: 'bg-slate-500/80', text: 'WATCH LIST' },
+            };
+            const c = config[level] || config.medium;
+            return (
+                <span className={`${c.bg} px-3 py-1 rounded-sm text-white text-[10px] font-bold tracking-widest border border-white/10 uppercase`}>
+                    {c.text}
+                </span>
+            );
+        };
+
+        const SlideLayout = ({ children, company, drug, priority, slideNum, totalSlides = 6 }) => (
+            <div className="ferma-slide-container h-full flex flex-col" style={{ background: 'linear-gradient(135deg, #0F1115 0%, #181825 100%)', color: 'white' }}>
+                <div className="flex items-center justify-between px-8 py-4 border-b border-white/10">
+                    <div className="flex items-center gap-2.5">
+                        <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 5 1 C 8 0.5, 14 1.5, 20 1 C 24 0.5, 26 1, 27 2 C 27.5 4, 27 10, 27.5 16 C 28 22, 27 25, 26 27 C 24 27.5, 18 27, 12 27.5 C 6 28, 2 27, 1 26 C 0.5 24, 1 18, 0.5 12 C 0 6, 1 2, 2 1 C 3 0.5, 4 1, 5 1 Z" fill="#7B61FF" />
+                            <g transform="translate(3, 4) scale(0.045)">
+                                <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                                <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                                <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                                <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                            </g>
+                        </svg>
+                        <span className="text-white/40 font-semibold text-xs tracking-tight">Ferma Agents</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <span className="text-white/20 text-xs">Confidential</span>
+                        <span className="text-white/40 text-xs font-medium px-2 py-1 rounded bg-white/5">{slideNum}/{totalSlides}</span>
+                    </div>
+                </div>
+                <div className="px-8 pt-5 pb-4">
+                    <div className="flex items-start justify-between">
+                        <div>
+                            <h1 className="font-bold text-white tracking-tight mb-1" style={{ fontSize: '18px' }}>{company}</h1>
+                            <p className="text-white/60 font-medium" style={{ fontSize: '10px' }}>{drug}</p>
+                        </div>
+                        {priority && <PriorityBadge level={priority} />}
+                    </div>
+                </div>
+                <div className="flex-1 px-8 pb-6 overflow-auto">{children}</div>
+                <div className="flex items-center justify-between px-8 py-4 border-t border-white/10 bg-black/20">
+                    <span className="text-white/20 text-xs">China ADC Preclinical Assessment</span>
+                    <span className="text-white/20 text-xs">January 2026</span>
+                </div>
+            </div>
+        );
+
+        const MetricCard = ({ value, label, highlight, subtext }) => (
+            <div className="rounded-lg p-3 transition-all bg-white border border-slate-200 shadow-sm">
+                <p className="text-xl font-bold tracking-tight text-slate-900" style={{ fontSize: '18px' }}>{value}</p>
+                <p className="text-slate-500 mt-1 uppercase tracking-wider font-medium" style={{ fontSize: '10px' }}>{label}</p>
+                {subtext && <p className={`font-medium mt-1 ${subtext.includes('+') || subtext.includes('p<') ? 'text-emerald-600' : subtext.includes('-') || subtext.toLowerCase().includes('critical') ? 'text-rose-600' : 'text-slate-400'}`} style={{ fontSize: '10px' }}>{subtext}</p>}
+            </div>
+        );
+
+        const GlassCard = ({ title, children, accent }) => (
+            <div className="rounded-lg p-3 bg-white border border-slate-200 shadow-sm">
+                {title && <p className="font-semibold text-slate-500 uppercase tracking-widest mb-2.5" style={{ fontSize: '10px' }}>{title}</p>}
+                {children}
+            </div>
+        );
+
+        const ACCENT = '#7B61FF';
+        const accentBg = { backgroundColor: ACCENT };
+
+        const type = {
+            heading: { fontSize: '14px', lineHeight: '18px' },
+            subheading: { fontSize: '12px', lineHeight: '16px' },
+            body: { fontSize: '11px', lineHeight: '15px' },
+        };
+
+        function FermaAgents() {
+            const [activeTab, setActiveTab] = useState('exec');
+            const [chatInput, setChatInput] = useState('');
+            const [planCollapsed, setPlanCollapsed] = useState(false);
+            const [chatCollapsed, setChatCollapsed] = useState(false);
+            const [expandedSection, setExpandedSection] = useState(1);
+            const [currentPage, setCurrentPage] = useState(1);
+            const [selectedAlert, setSelectedAlert] = useState(0);
+            const [currentSlide, setCurrentSlide] = useState(1);
+            const [progress, setProgress] = useState(0);
+            const [isAutoCycling, setIsAutoCycling] = useState(true);
+            const recordsPerPage = 10;
+            const tabOrder = ['exec', 'data', 'alerts', 'reports'];
+            const cycleDuration = 5000;
+
+            useEffect(() => {
+                if (!isAutoCycling) return;
+                const progressInterval = setInterval(() => {
+                    setProgress(prev => {
+                        if (prev >= 100) {
+                            setActiveTab(current => {
+                                const currentIndex = tabOrder.indexOf(current);
+                                const nextIndex = (currentIndex + 1) % tabOrder.length;
+                                setExpandedSection(nextIndex === 0 ? null : nextIndex);
+                                return tabOrder[nextIndex];
+                            });
+                            return 0;
+                        }
+                        return prev + (100 / (cycleDuration / 50));
+                    });
+                }, 50);
+                return () => clearInterval(progressInterval);
+            }, [isAutoCycling]);
+
+            const handleTabClick = (tab, index) => {
+                setIsAutoCycling(false);
+                setProgress(0);
+                setActiveTab(tab);
+                setExpandedSection(index === 0 ? null : index);
+                setTimeout(() => setIsAutoCycling(true), 10000);
+            };
+
+            const planSections = [
+                { title: 'Objective', steps: [{ title: 'Track early-stage ADC assets from Chinese biotechs with preclinical data showing differentiated mechanisms or superior potency. Surface partnership opportunities before western databases catch up.' }] },
+                { title: 'Data', steps: [{ title: 'China source monitoring', description: 'Aggregate preclinical data from NMPA filings, WeChat biotech channels, and local conference presentations. Focus on novel targets (Claudin, Nectin-4, TROP2 variants) and next-gen linker-payloads.' }] },
+                { title: 'Alerts', steps: [{ title: 'Signal detection', description: 'Monitor for IND filings, ex-China licensing announcements, and leadership commentary on partnering intent. Track patent filings for freedom-to-operate assessment.' }] },
+                { title: 'Reports', steps: [{ title: 'Target profiles', description: 'Generate executive summaries with preclinical efficacy data, competitive positioning vs. western ADC leaders, and estimated deal terms based on recent comparables.' }] },
+            ];
+
+            const rawData = [
+                { id: 1, company: 'Hengrui', drug: 'HRS-ADC-1', target: 'Claudin 18.2', phase: 'Preclinical', efficacyVsSoc: 'Top-tier potency', efficacyNote: 'In-vivo data', rights: 'Global Ex-CN', cashRunway: '>24 mo', dealLikelihood: 'High' },
+                { id: 2, company: 'Kelun-Biotech', drug: 'SKB-264', target: 'TROP2', phase: 'Phase 2', efficacyVsSoc: '+12% ORR vs SOC', efficacyNote: 'TNBC data', rights: 'Ex-China', cashRunway: '>36 mo', dealLikelihood: 'Medium' },
+                { id: 3, company: 'RemeGen', drug: 'RC118', target: 'Claudin 18.2', phase: 'Phase 1', efficacyVsSoc: 'Promising', efficacyNote: 'Early signals', rights: 'Ex-China', cashRunway: '18 mo', dealLikelihood: 'High' },
+                { id: 4, company: 'Duality Bio', drug: 'DB-1305', target: 'TROP2', phase: 'Preclinical', efficacyVsSoc: 'Novel payload', efficacyNote: 'Topoisomerase I', rights: 'Global', cashRunway: '14 mo', dealLikelihood: 'High' },
+                { id: 5, company: 'Hansoh', drug: 'HS-20093', target: 'B7-H3', phase: 'Phase 1', efficacyVsSoc: 'First-in-class', efficacyNote: 'Solid tumors', rights: 'Ex-China', cashRunway: '>36 mo', dealLikelihood: 'Medium' },
+            ];
+
+            const alertsData = [
+                { id: 1, date: 'Jan 10', type: 'IND Filing', headline: 'Hengrui files IND for Claudin 18.2 ADC in US', content: ['Hengrui Medicine submitted IND application to FDA for HRS-ADC-1, their novel Claudin 18.2-targeting ADC.', 'Preclinical data shows superior tumor regression vs existing Claudin 18.2 approaches.', 'Ex-China rights remain available per company guidance.'], source: 'NMPA / FDA Database' },
+                { id: 2, date: 'Jan 8', type: 'Partnership Signal', headline: 'Duality Bio CEO: "Actively exploring global partnerships"', content: ['WeChat interview reveals strategic intent to partner DB-1305 for global development.', 'Novel topoisomerase I payload differentiates from existing TROP2 ADCs.', '14-month runway suggests urgency for partnership discussions.'], source: 'WeChat Channel' },
+                { id: 3, date: 'Jan 5', type: 'Clinical Data', headline: 'Kelun SKB-264 shows 62% ORR in TNBC', content: ['Phase 2 interim data presented at local Chinese oncology conference.', 'Response rate exceeds Trodelvy historical benchmark in similar population.', 'Merck partnership validates platform; additional assets may be available.'], source: 'CSCO Conference' },
+            ];
+
+            return (
+                <div className="ferma-app-container h-full flex flex-col" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    <header className="h-14 px-5 flex items-center justify-between flex-shrink-0 relative" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)' }}>
+                        <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-1.5 mr-2">
+                                <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]"></div>
+                                <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]"></div>
+                                <div className="w-2.5 h-2.5 rounded-full bg-[#28C840]"></div>
+                            </div>
+                            <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                                <path d="M 5 1 C 8 0.5, 14 1.5, 20 1 C 24 0.5, 26 1, 27 2 C 27.5 4, 27 10, 27.5 16 C 28 22, 27 25, 26 27 C 24 27.5, 18 27, 12 27.5 C 6 28, 2 27, 1 26 C 0.5 24, 1 18, 0.5 12 C 0 6, 1 2, 2 1 C 3 0.5, 4 1, 5 1 Z" fill="#7B61FF" />
+                                <g transform="translate(3, 4) scale(0.045)">
+                                    <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                                    <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                                    <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                                    <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" strokeWidth="58" strokeLinecap="round" fill="none" />
+                                </g>
+                            </svg>
+                            <span className="font-medium text-white" style={type.body}>Ferma Agents</span>
+                        </div>
+                        <div className="absolute left-1/2 transform -translate-x-1/2">
+                            <span className="font-semibold text-white" style={type.subheading}>China ADC Preclinical Activities</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <button className="h-8 px-3 bg-white/10 border border-white/20 rounded-md font-medium text-white hover:bg-white/20" style={type.body}>Share</button>
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-medium" style={{ ...accentBg, ...type.body }}>U</div>
+                        </div>
+                    </header>
+
+                    <div className="flex flex-1 overflow-hidden">
+                        <aside className={`${planCollapsed ? 'w-10 pl-2 pr-1' : 'pl-4 pr-3'} flex flex-col flex-shrink-0 transition-all duration-300`} style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)', width: planCollapsed ? undefined : '280px' }}>
+                            <div className={`h-12 mt-3 flex items-center flex-shrink-0 ${planCollapsed ? 'justify-center' : 'justify-between'}`}>
+                                {!planCollapsed && <span className="h-7 px-3 rounded text-white font-medium flex items-center" style={{ ...accentBg, ...type.body }}>Plan</span>}
+                                <button onClick={() => setPlanCollapsed(!planCollapsed)} className="h-7 w-7 flex items-center justify-center text-white hover:opacity-70">
+                                    <CollapsePanelLeftIcon size={16} />
+                                </button>
+                            </div>
+                            {!planCollapsed && (
+                                <div className="flex-1 overflow-auto py-3">
+                                    {planSections.map((section, sectionIndex) => {
+                                        const isObjective = sectionIndex === 0;
+                                        const isExpanded = isObjective || expandedSection === sectionIndex;
+                                        return (
+                                            <div key={sectionIndex} className="mb-3">
+                                                <div className="flex items-center gap-2 mb-2 cursor-pointer hover:opacity-80" onClick={() => { if (isObjective) { setActiveTab('exec'); setExpandedSection(null); } else { setExpandedSection(isExpanded ? null : sectionIndex); const tabMap = { 1: 'data', 2: 'alerts', 3: 'reports' }; if (tabMap[sectionIndex]) setActiveTab(tabMap[sectionIndex]); } }}>
+                                                    {!isObjective && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`text-white/40 transition-transform ${isExpanded ? 'rotate-90' : ''}`}><polyline points="9 18 15 12 9 6" /></svg>}
+                                                    <span className="text-white/40 uppercase tracking-wider font-medium" style={type.body}>{section.title}</span>
+                                                    <div className="flex-1 h-px bg-white/10"></div>
+                                                </div>
+                                                {isExpanded && section.steps.map((step, stepIndex) => (
+                                                    <div key={stepIndex} className="flex gap-3 ml-1">
+                                                        {sectionIndex > 0 && <div className="flex flex-col items-center"><div className="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center" style={accentBg}><Check size={9} className="text-white" strokeWidth={3} /></div></div>}
+                                                        <div className="pb-3">
+                                                            {step.description ? (<><h4 className="font-medium text-white mb-0.5" style={type.body}>{step.title}</h4><p className="text-white/50" style={type.body}>{step.description}</p></>) : (<p className="text-white/80" style={type.body}>{step.title}</p>)}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </aside>
+
+                        <div className="flex-1 pl-3 overflow-hidden">
+                            <div className="h-full rounded-tl-2xl shadow-lg flex overflow-hidden" style={{ background: '#ffffff' }}>
+                                <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+                                    <div className="mt-3 px-6 flex-shrink-0">
+                                        <div className="h-12 flex items-center justify-between">
+                                            <div className="flex items-center gap-1">
+                                                {['Exec Summary', 'Data', 'Alerts', 'Reports'].map((tab, index) => {
+                                                    const tabKey = tab === 'Exec Summary' ? 'exec' : tab.toLowerCase();
+                                                    const isActive = activeTab === tabKey;
+                                                    return (
+                                                        <button key={tab} onClick={() => handleTabClick(tabKey, index)} className={`relative h-7 px-3 rounded font-medium transition-colors overflow-hidden ${isActive ? 'text-white' : 'text-black hover:bg-black/5'}`} style={{ ...(isActive ? accentBg : {}), ...type.body }}>
+                                                            <span className="relative z-10">{tab}</span>
+                                                            {isActive && <div className="absolute bottom-0 left-0 h-0.5 bg-white/50 transition-all duration-75 ease-linear" style={{ width: `${progress}%` }} />}
+                                                        </button>
+                                                    );
+                                                })}
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <input type="text" placeholder="Search..." className="h-8 w-40 px-3 border border-black/20 rounded text-black placeholder-black/40 focus:outline-none focus:border-violet-400" style={type.body} />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex-1 overflow-auto px-8 py-6">
+                                        {activeTab === 'exec' && (
+                                            <article className="max-w-3xl">
+                                                <h2 className="font-semibold text-black" style={type.heading}>China ADC Preclinical Activities: Early-stage signal tracking</h2>
+                                                <p className="text-black/50 mt-1 mb-6" style={type.body}>ADC Pipeline Monitoring • January 2026</p>
+                                                <div className="mb-8 p-5 rounded-xl border border-l-4 bg-white" style={{ borderColor: 'rgba(123,97,255,0.2)', borderLeftColor: '#7B61FF', backgroundColor: 'rgba(123,97,255,0.03)' }}>
+                                                    <div className="flex items-center gap-2 mb-2">
+                                                        <div className="w-4 h-4 rounded text-white flex items-center justify-center font-bold text-[10px]" style={{ backgroundColor: '#7B61FF' }}>!</div>
+                                                        <p className="font-semibold text-[#7B61FF]" style={type.subheading}>Recommendation</p>
+                                                    </div>
+                                                    <p className="text-black text-xs font-bold mb-3">Monitor Hengrui's Claudin 18.2 ADC pipeline expansion.</p>
+                                                    <p className="text-black/70 leading-relaxed" style={type.body}>Early signals from NMPA filings and WeChat monitoring indicate differentiated preclinical data. IND filing in US suggests global ambitions with ex-China rights potentially available.</p>
+                                                </div>
+                                                <div className="mb-8">
+                                                    <p className="text-black font-semibold mb-4" style={type.subheading}>Priority targets from China ADC landscape</p>
+                                                    <table className="w-full text-xs">
+                                                        <thead>
+                                                            <tr className="border-b-2 border-black/10">
+                                                                <th className="text-left py-2.5 pr-4 font-semibold text-black/60">Company</th>
+                                                                <th className="text-left py-2.5 px-4 font-semibold text-black/60">Asset</th>
+                                                                <th className="text-left py-2.5 px-4 font-semibold text-black/60">Target</th>
+                                                                <th className="text-left py-2.5 px-4 font-semibold text-black/60">Stage</th>
+                                                                <th className="text-left py-2.5 pl-4 font-semibold text-black/60">Signal</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr className="border-b border-black/5 bg-black/[0.02]">
+                                                                <td className="py-3.5 pr-4"><span className="font-semibold text-black">Hengrui</span></td>
+                                                                <td className="py-3.5 px-4 text-black/70">HRS-ADC-1</td>
+                                                                <td className="py-3.5 px-4 text-black/60">Claudin 18.2</td>
+                                                                <td className="py-3.5 px-4"><span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">Preclinical</span></td>
+                                                                <td className="py-3.5 pl-4 text-emerald-600 font-medium">IND Filed (US)</td>
+                                                            </tr>
+                                                            <tr className="border-b border-black/5">
+                                                                <td className="py-3.5 pr-4"><span className="font-semibold text-black">Duality Bio</span></td>
+                                                                <td className="py-3.5 px-4 text-black/70">DB-1305</td>
+                                                                <td className="py-3.5 px-4 text-black/60">TROP2</td>
+                                                                <td className="py-3.5 px-4"><span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">Preclinical</span></td>
+                                                                <td className="py-3.5 pl-4 text-violet-600 font-medium">"Seeking partners"</td>
+                                                            </tr>
+                                                            <tr className="border-b border-black/5">
+                                                                <td className="py-3.5 pr-4"><span className="font-semibold text-black">RemeGen</span></td>
+                                                                <td className="py-3.5 px-4 text-black/70">RC118</td>
+                                                                <td className="py-3.5 px-4 text-black/60">Claudin 18.2</td>
+                                                                <td className="py-3.5 px-4"><span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-green-50 text-green-700 border border-green-200">Phase 1</span></td>
+                                                                <td className="py-3.5 pl-4 text-black/60">Ex-China available</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </article>
+                                        )}
+
+                                        {activeTab === 'data' && (
+                                            <div className="h-full flex flex-col">
+                                                <h2 className="font-semibold text-black mb-5" style={type.heading}>China ADC Pipeline: 5 assets under active monitoring</h2>
+                                                <div className="flex-1 overflow-auto">
+                                                    <table className="w-full text-xs border-collapse">
+                                                        <thead className="sticky top-0 bg-white border-b-2 border-black/10 z-10">
+                                                            <tr>
+                                                                <th className="text-left py-2.5 px-3 font-semibold text-black/60">Company</th>
+                                                                <th className="text-left py-2.5 px-3 font-semibold text-black/60">Asset</th>
+                                                                <th className="text-left py-2.5 px-3 font-semibold text-black/60">Target</th>
+                                                                <th className="text-left py-2.5 px-3 font-semibold text-black/60">Stage</th>
+                                                                <th className="text-left py-2.5 px-3 font-semibold text-black/60">Data Signal</th>
+                                                                <th className="text-left py-2.5 px-3 font-semibold text-black/60">Rights</th>
+                                                                <th className="text-left py-2.5 px-3 font-semibold text-black/60">Priority</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {rawData.map((row) => (
+                                                                <tr key={row.id} className="border-b border-black/5 hover:bg-black/[0.02]">
+                                                                    <td className="py-2.5 px-3 font-medium text-black">{row.company}</td>
+                                                                    <td className="py-2.5 px-3 text-black/70">{row.drug}</td>
+                                                                    <td className="py-2.5 px-3 text-black/60">{row.target}</td>
+                                                                    <td className="py-2.5 px-3 text-black/60">{row.phase}</td>
+                                                                    <td className="py-2.5 px-3"><span className="text-black/70">{row.efficacyVsSoc}</span><span className="text-black/50 block text-xs mt-0.5">{row.efficacyNote}</span></td>
+                                                                    <td className="py-2.5 px-3"><span className={`px-2 py-0.5 rounded text-[11px] font-semibold border ${row.rights === 'Global' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-amber-50 text-amber-600 border-amber-200'}`}>{row.rights}</span></td>
+                                                                    <td className="py-2.5 px-3"><span className={`px-2 py-0.5 rounded text-[11px] font-semibold border ${row.dealLikelihood === 'High' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-amber-50 text-amber-600 border-amber-200'}`}>{row.dealLikelihood}</span></td>
+                                                                </tr>
+                                                            ))}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {activeTab === 'alerts' && (
+                                            <div className="h-full flex flex-col">
+                                                <h2 className="font-semibold text-black mb-5" style={type.heading}>Latest signals from China ADC landscape</h2>
+                                                <div className="flex-1 flex overflow-hidden">
+                                                    <div className="w-1/2 flex-shrink-0 overflow-auto">
+                                                        <div className="pr-6 space-y-2">
+                                                            {alertsData.map((alert, index) => {
+                                                                const isSelected = selectedAlert === index;
+                                                                return (
+                                                                    <div key={alert.id} onClick={() => setSelectedAlert(index)} className={`p-3 rounded-lg cursor-pointer transition-colors border ${isSelected ? 'bg-white border-black/20 shadow-sm' : 'bg-white border-transparent hover:bg-black/[0.02]'}`}>
+                                                                        <div className="flex items-center gap-2 mb-1.5">
+                                                                            <span className="text-black/40" style={type.body}>{alert.date}</span>
+                                                                            <span className="text-black/30">·</span>
+                                                                            <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded border ${alert.type === 'IND Filing' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : alert.type === 'Partnership Signal' ? 'bg-purple-50 text-purple-600 border-purple-100' : 'bg-blue-50 text-blue-600 border-blue-100'}`}>{alert.type}</span>
+                                                                        </div>
+                                                                        <p style={{ ...type.body, lineHeight: '15px', color: isSelected ? '#000' : 'rgba(0,0,0,0.7)', fontWeight: isSelected ? 500 : 400 }}>{alert.headline}</p>
+                                                                    </div>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </div>
+                                                    <div className="w-1/2 overflow-auto border-l border-black/10 pl-8">
+                                                        {alertsData[selectedAlert] && (
+                                                            <div>
+                                                                <div className="flex items-center gap-2 mb-4">
+                                                                    <span className="text-black/50" style={type.body}>{alertsData[selectedAlert].date}</span>
+                                                                    <span className="text-black/30">·</span>
+                                                                    <span className="text-black/50" style={type.body}>{alertsData[selectedAlert].source}</span>
+                                                                </div>
+                                                                <h2 className="text-black font-semibold mb-5" style={type.heading}>{alertsData[selectedAlert].headline}</h2>
+                                                                <div className="space-y-4 mb-6">
+                                                                    {alertsData[selectedAlert].content.map((paragraph, i) => (
+                                                                        <p key={i} className="text-black/70 leading-relaxed" style={type.body}>{paragraph}</p>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {activeTab === 'reports' && (
+                                            <div className="h-full flex flex-col">
+                                                <h2 className="font-semibold text-black mb-5" style={type.heading}>Target assessment: China ADC assets</h2>
+                                                <div className="flex-1 overflow-auto">
+                                                    <SlideLayout company="Hengrui Medicine" drug="HRS-ADC-1: Claudin 18.2 ADC" priority="high" slideNum={1}>
+                                                        <div className="h-full flex flex-col gap-5">
+                                                            <div className="grid grid-cols-4 gap-3">
+                                                                <MetricCard value="Top-tier" label="Preclinical Potency" subtext="In-vivo data" highlight />
+                                                                <MetricCard value="Global" label="Rights Available" subtext="Ex-China" />
+                                                                <MetricCard value="$50-100M" label="Est. Upfront" />
+                                                                <MetricCard value="Preclinical" label="Asset Stage" subtext="IND H1 2026" />
+                                                            </div>
+                                                            <div className="flex gap-4 flex-1 min-h-0">
+                                                                <div className="flex-1 min-w-0">
+                                                                    <GlassCard title="Investment Thesis" accent>
+                                                                        <p className="text-slate-700 leading-relaxed font-light" style={{ fontSize: '11px' }}>
+                                                                            Hengrui's Claudin 18.2 ADC shows <span className="text-emerald-600 font-semibold">differentiated preclinical potency</span> vs. existing approaches. IND filing in US signals global ambitions. <span className="text-violet-600 font-semibold">Ex-China rights available</span> creates partnership opportunity before clinical validation.
+                                                                        </p>
+                                                                        <div className="flex flex-wrap gap-1.5 mt-3">
+                                                                            <span className="px-2.5 py-1 rounded bg-slate-50 text-slate-600 font-medium border border-slate-200" style={{ fontSize: '10px' }}>Novel Payload</span>
+                                                                            <span className="px-2.5 py-1 rounded bg-slate-50 text-slate-600 font-medium border border-slate-200" style={{ fontSize: '10px' }}>Ex-China</span>
+                                                                            <span className="px-2.5 py-1 rounded bg-slate-50 text-slate-600 font-medium border border-slate-200" style={{ fontSize: '10px' }}>IND Filed</span>
+                                                                        </div>
+                                                                    </GlassCard>
+                                                                </div>
+                                                                <div className="w-52 flex flex-col gap-3 flex-shrink-0 min-w-0">
+                                                                    <GlassCard title="Key Risks">
+                                                                        <ul className="space-y-2" style={{ fontSize: '10px' }}>
+                                                                            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span><span className="text-slate-600 leading-relaxed">Early stage - no clinical data</span></li>
+                                                                            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span><span className="text-slate-600 leading-relaxed">Competitive Claudin landscape</span></li>
+                                                                        </ul>
+                                                                    </GlassCard>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </SlideLayout>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <div className={`${chatCollapsed ? 'w-10' : ''} border-l border-black/10 flex flex-col flex-shrink-0 transition-all duration-300`} style={{ width: chatCollapsed ? undefined : '240px' }}>
+                                    <div className={`h-12 mt-3 px-4 flex items-center flex-shrink-0 ${chatCollapsed ? 'justify-center px-0' : 'justify-between'}`}>
+                                        {!chatCollapsed && <span className="h-7 px-3 rounded text-white font-medium flex items-center" style={{ ...accentBg, ...type.body }}>Chat</span>}
+                                        <button onClick={() => setChatCollapsed(!chatCollapsed)} className="h-7 w-7 flex items-center justify-center text-black hover:opacity-70">
+                                            <CollapsePanelRightIcon size={16} />
+                                        </button>
+                                    </div>
+                                    {!chatCollapsed && (
+                                        <>
+                                            <div className="flex-1 overflow-auto px-4 py-3 space-y-4">
+                                                <div className="flex flex-col items-end">
+                                                    <div className="bg-white border border-black/10 text-black rounded-lg px-3 py-2.5" style={type.body}>What's the differentiation for Hengrui's ADC?</div>
+                                                    <span className="text-black/50 mt-1.5" style={type.body}>10:34 AM</span>
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <p className="text-black" style={type.body}>Hengrui's HRS-ADC-1 uses a novel linker-payload technology showing superior tumor regression vs. existing Claudin 18.2 approaches in preclinical models. The IND filing suggests confidence in their CMC package.</p>
+                                                    <span className="text-black/50 mt-1.5" style={type.body}>10:35 AM</span>
+                                                </div>
+                                            </div>
+                                            <div className="p-3 border-t border-black/10">
+                                                <div className="flex items-center gap-2">
+                                                    <input type="text" value={chatInput} onChange={(e) => setChatInput(e.target.value)} placeholder="Ask a question..." className="flex-1 h-9 px-3 border border-black/20 rounded-md text-black placeholder-black/40 focus:outline-none focus:border-violet-400" style={type.body} />
+                                                    <button className="h-9 w-9 flex items-center justify-center text-white rounded-md hover:opacity-90" style={accentBg}><Send size={16} /></button>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const fermaRoot = document.getElementById('ferma-app-root');
+        if (fermaRoot) {
+            const root = ReactDOM.createRoot(fermaRoot);
+            root.render(<FermaAgents />);
+        }
+    </script>
+</body>
+</html>
